@@ -1,0 +1,125 @@
+
+body {
+  background: #456;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  height: 100%;
+  background-image: url("../img/login/picture%201.jpg");
+}
+
+
+/* The triangle form is achieved by a CSS hack */
+.login-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: #28d;
+}
+
+.login-header {
+  font-size: 36px;
+  padding: 90px;
+  text-align: center;
+  color: #018e85;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+/* Every row inside .login-container is defined with p tags */
+.login div {
+  padding: 12px;
+  float: right;
+  width: 100%;
+  margin-top: -9px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 80%;
+  border-bottom: 1px;
+  border-bottom-color: #ffffff;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 22px;
+      direction: rtl;
+  background: rgba(255,255,255, 0.5);
+}
+
+
+
+.login input[type="submit"] {
+  background: #1bbdb3;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 48px !important;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.row {
+	    direction: rtl;
+    font-size: 20px;
+}
+
+.forgot {
+	    position: absolute;
+    left: 317px;
+  top: 578px;
+    color: #000000;
+    text-decoration: blink;
+}
+.forgotPassInput{
+	margin-left: 77px;
+    font-size: 20px;
+    border: 1px;
+    border-style: solid;
+}
+
+.tabs-top {
+	top: 0px;
+}
+
+.form .imageBackground{
+  background-color: #018e85;
+  width: 80px;
+  height: 67px;
+
+}
+.envelop{
+  background-image: url("../img/login/envelope%20white1.png");
+  background-repeat: no-repeat;
+  display: block;
+  width: 71px;
+  height: 48px;
+  border-color: transparent;
+  padding: 25px;
+  position: relative;
+  right: 6px;
+}
+
+.lock{
+  background-image: url("../img/login/lock%20white1.png");
+  background-repeat: no-repeat;
+  display: block;
+  width: 71px;
+  height: 68px;
+  border-color: transparent;
+  padding: 33px;
+  position: relative;
+  right: -5px;
+  bottom: 11px;
+}
+
+.submit{
+  margin-top: 53px !important;
+}

@@ -1,0 +1,60 @@
+
+
+<ion-view view-title="Calendar">
+
+
+  <ionic-datepicker date="currentDate" callback="datePickerCallback">
+    <button class="button button-block dateButton" >
+      <span class="beforeDate" ng-click="changeDay($event); $event.stopPropagation();"> < </span>
+      <span class="dateDisplyed">{{ currentDate | date:'MM/dd/yyyy' }}</span>
+      <span class="afterDate" ng-click="changeDay($event); $event.stopPropagation();"> > </span>
+    </button>
+  </ionic-datepicker>
+
+
+	<!--  www/template/tab-filter  -->
+  <ion-content class="padding bnsHasDate">
+
+
+<!--     <bns-loader ng-if="!isDataRecieved"></bns-loader> -->
+
+    <!-- ng-repeat activity in activities: orderBy: activity.time -->
+    <div class="card bnsCard" ng-repeat="activity in activities | orderBy:'start' track by $index">
+
+      <a name="{{activity._id}}" ng-click="gotoActivity(activity)">
+
+		<!-- Here should be the description section of the activity: title, time, participants-->
+  		<div class="item item-text-wrap bnsMissionDesc">
+    		<h2 class="missionTime">{{activity.start}}</h2>
+    		<h2 class="missionTitle">{{activity.mission.title}}</h2>
+    		<p class="missionDesc">({{activity.mission.description}})</p>
+    		<div class="missionParticipants">{{activity.mission.title}}</div>
+  		</div>
+
+		<!-- This section should be visible only if the user or the guide uploaded an img-->
+		<div class="item item-text-wrap mission-img">
+			<!-- ng-src:activity.img-->
+			<img class="bnsMissionImage-size" src="../img/missionImg/food%20image_background.png">
+		</div>
+
+      </a>
+
+  		<!-- Here should be static icons for activity's settings and prefrence -->
+  		<div class="list bnsMissionIcons">
+		    <button ng-class="{'ion-ios-alarm-outline' : !activity.notify, 'ion-ios-alarm' : activity.notify}" ng-click="chooseTime(activity)">
+          <label>התרעה</label>
+        </button>
+        <button ng-class="{'ion-ios-heart-outline' : !activity.favorit, 'ion-ios-heart' : activity.favorit}" ng-click="favoritesBtn(activity)" >
+          <label>מועדפים</label>
+        </button>
+        <button class="ion-ios-people-outline" >
+          <label>מי מגיע?</label>
+        </button>
+		</div>
+
+	</div>
+
+
+  </ion-content>
+</ion-view>
+

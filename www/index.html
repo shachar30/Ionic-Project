@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="BNSApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!-- IONIC css -->
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+
+    <!-- Google fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
+
+    <!-- BNS Theme -->
+    <!-- <link rel="stylesheet" data-ng-href="stylesheets/{{ app.layout.theme }}.css" /> -->
+    <link rel="stylesheet" data-ng-href="stylesheets/styles.css" />
+    <link rel="stylesheet" data-ng-href="stylesheets/loginStyle.css" />
+
+    <!-- Dte Picker Theme -->
+    <!--<link href="lib/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />-->
+
+    <link href="lib/datepicker-for-ionic/dist/style.css" rel="stylesheet">
+
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <script src="lib/jquery/jquery-2.1.4.js"></script>
+
+    <script src="lib/angular-ui/build/angular-ui.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="lib/oclazyload/dist/ocLazyLoad.min.js"></script>
+
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js" ></script>
+
+    <script src="lib/moment/min/moment.min.js"></script>
+
+    <!-- path to ionic/angularjs js -->
+    <script src="lib/datepicker-for-ionic/dist/templates.min.js"></script>
+    <script src="lib/datepicker-for-ionic/dist/ionic-datepicker.min.js"></script>
+
+    <!--<script src="lib/angular-translate/angular-translate.min.js"></script>-->
+
+    <!-- your app's factories js -->
+    <script src="js/factories/factory.js"></script>
+
+
+    <!-- This is your app directives -->
+    <script src="js/directives/bnsLoader.js"></script>
+
+    <!-- your app's services js -->
+    <script src="js/services/services.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <!-- your app's constant js -->
+    <script src="js/constant.js"></script>
+
+    <!-- your app's controllers js -->
+    <script src="js/controllers/main.js"></script>
+
+
+    <base href="/" />
+  </head>
+  <body ng-controller="AppCtrl">
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+
+
+      <!-- Controllers scripts -->
+      <script src="js/controllers/loginCtrl.js"></script>
+      <script src="js/controllers/notificationCtrl.js"></script>
+      <script src="js/controllers/filterFriends/filterCtrl.js"></script>
+      <script src="js/controllers/calendar/activityCtrl.js"></script>
+      <script src="js/controllers/calendar/calendarCtrl.js"></script>
+      <script src="js/controllers/profile/profileCtrl.js"></script>
+      <script src="js/controllers/groups/groupsCtrl.js"></script>
+
+  </body>
+</html>
