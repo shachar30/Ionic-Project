@@ -1,0 +1,30 @@
+<ion-view view-title="כתבה">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/article/articleDisplay.css">
+
+  <ion-content>
+
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button class="button-icon ion-arrow-left-c" style="display: block;" ng-click="goBack()">
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <div class="content has-header bnsActivity">
+      <div class="container">
+        <div class="row">
+          <div class="headerTitle">
+            <h2><b>{{articleObj.headerTitle}}:</b></h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="contentArticle">
+            <h3>{{articleObj.desc}}</h3>
+          </div>
+        </div>
+
+
+      </div>
+    <h1></h1>
+    </div>
+
+  </ion-content>
+</ion-view>

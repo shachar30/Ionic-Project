@@ -1,0 +1,12 @@
+.bnsprofilepage{
+  top: 49px !important;
+}
+.backgroundImg{
+  position: relative;
+}
+.profileImg{
+  position: relative;
+  right: 125px;
+  top:-16px;
+}
+

@@ -13812,7 +13812,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
             optionTemplate = jqLite(document.createElement('option')),
             optGroupTemplate = jqLite(document.createElement('optgroup')),
             nullOption = false, // if false then user will not be able to select it
-            // This is an array of array of existing option groups in DOM. We try to reuse these if possible
+            // This is an array of array of existing option articles in DOM. We try to reuse these if possible
             // optionGroupsCache[0] is the options with no option group
             // optionGroupsCache[?][0] is the parent: either the SELECT or OPTGROUP element
             optionGroupsCache = [[{element: selectElement, label:''}]];
@@ -13874,7 +13874,7 @@ var selectDirective = ['$compile', '$parse', function($compile,   $parse) {
         scope.$watch(render);
 
         function render() {
-          var optionGroups = {'':[]}, // Temporary location for the option groups before we render them
+          var optionGroups = {'':[]}, // Temporary location for the option articles before we render them
               optionGroupNames = [''],
               optionGroupName,
               optionGroup,

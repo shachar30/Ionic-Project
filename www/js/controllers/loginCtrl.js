@@ -76,7 +76,7 @@ app.controller('LoginCtrl', function ($scope, $rootScope, $http, userFactory, AP
                         // redirect to dashboard page.
                         // $location.path('tab.dash');
 
-                        $state.go('tab.groups');
+                        $state.go('tab.articles');
 
                     }, function (err) {
                       console.log("Error: ", err);

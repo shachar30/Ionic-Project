@@ -82,14 +82,21 @@ app
 
   // Each tab has its own nav history stack:
 
-    .state('tab.groups', {
-      url: '/groups',
+    .state('tab.articles', {
+      url: '/articles',
       views: {
-        'tab-groups': {
-          templateUrl: 'templates/tab-groups.html',
-          controller: 'GroupsCtrl'
+        'tab-articles': {
+          templateUrl: 'templates/tab-articles.html',
+          controller: 'ArticlesCtrl'
         }
       }
+    })
+
+    .state('article', {
+      url: '/articles',
+      params: { obj: null },
+      templateUrl: 'templates/article.html',
+      controller: 'articleContent'
     })
 
   .state('tab.filter', {

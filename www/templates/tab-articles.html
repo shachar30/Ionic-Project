@@ -1,0 +1,22 @@
+<ion-view view-title="Articles">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/article/mainArticle.css">
+<!--  www/template/tab-filter  -->
+  <ion-content class="padding bnsHasTabs">
+    <div class="container ">
+      <div class="row row-articles" ng-repeat="art in articles">
+        <div class="col-sm-4 img-article">
+          <img src="{{art.Img}}">
+        </div>
+        <div class="col-sm-8 content-article">
+          <h3 ng-click="passToArticle(art)"><b>{{art.headerTitle}}</b></h3>
+          <div class="list favorit-article">
+            <button ng-class="{'ion-ios-heart-outline' : !art.favorit, 'ion-ios-heart' : art.favorit}" ng-click="favoritesBtn(art)" >
+              <label>מועדפים</label>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

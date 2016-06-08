@@ -19158,7 +19158,7 @@ function roundNumber(parsedNumber, fractionSize, minFrac, maxFrac) {
  *           negSuf,  // the string to go after a negative number (e.g. `)`)
  *           posSuf   // the string to go after a positive number
  *         }} pattern
- * @param  {string} groupSep     The string to separate groups of number (e.g. `,`)
+ * @param  {string} groupSep     The string to separate articles of number (e.g. `,`)
  * @param  {string} decimalSep   The string to act as the decimal separator (e.g. `.`)
  * @param  {[type]} fractionSize The size of the fractional part of the number
  * @return {string}              The number formatted as a string

@@ -1,10 +1,21 @@
 <ion-view view-title="Filter Friends">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/filter/mainFilter.css">
 
 <!--  www/template/tab-filter  -->
   <ion-content class="padding bnsHasTabs">
-    <h2>Filter Page</h2>
 
-    <div>
+    <div class="row allUsers" ng-repeat="aprUser in allApartment">
+      <div col-md-12>
+        <div class="headerApartment">
+          <span>דירה מספר:{{aprUser.numberApartment}}</span>
+        </div>
+      </div>
+        <div class="usersDisplay">
+          <div class="usersApartments col-md-3" ng-repeat="user in aprUser.users">
+          <img ng-click="test(user)" src="{{user.img}}">
+          </div>
+        </div>
+
 
     </div>
   </ion-content>

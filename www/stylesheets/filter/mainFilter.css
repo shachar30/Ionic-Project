@@ -1,0 +1,18 @@
+.headerApartment{
+  position: absolute;
+  margin-bottom: 100px;
+  border-bottom: solid 1px black;
+}
+.usersApartments{
+  float: left;
+  padding: 10px;
+}
+.usersDisplay {
+  margin-bottom: 50px;
+  margin-top: 55px;
+
+}
+.allUsers{
+  border-bottom: solid 1px #00D3CF;
+  margin-bottom: 15px;
+}

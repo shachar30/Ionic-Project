@@ -1,0 +1,28 @@
+.headrArticle{
+
+}
+.row-articles{
+  margin: 20px;
+  border-bottom: solid 1px #00D3CF;
+}
+.img-article{
+  margin: 10px;
+}
+.content-article{
+}
+.favorit-article{
+
+  direction:rtl;
+}
+.favorit-article button{
+  font-size: 35px;
+  width: 70px;
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
+  right: 180px;
+}
+.favorit-article label{
+  float: right;
+  margin-right: 10px;
+}
