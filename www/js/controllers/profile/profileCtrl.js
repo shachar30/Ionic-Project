@@ -9,5 +9,8 @@ app.controller('ProfileCtrl', function($scope, $rootScope, $http, userFactory, A
   $scope.backgroundImg="../img/articles/backgroundProfile.jpg";
   //profile img need to be in user.
   $scope.profileImg='../img/articles/woman.jpg';
+  $scope.testJqu=function(){
+    $( "#e" ).slideToggle("slow" );
+  };
   console.log("user display",user);
 });
