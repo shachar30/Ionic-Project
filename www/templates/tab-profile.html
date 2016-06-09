@@ -13,18 +13,6 @@
         <img src="{{profileImg}}" style="border-radius: 35px;">
       </div>
     </div>
-
-    <!--<div class="row">-->
-      <!--<div class="toggles">-->
-        <!--<button ng-click="testJqu()" class="button">Test</button>-->
-        <!--<p id="testToggle">-->
-          <!--This is the paragraph to end all paragraphs.  You-->
-          <!--should feel <em>lucky</em> to have seen such a paragraph in-->
-          <!--your life.  Congratulations!-->
-        <!--</p>-->
-      <!--</div>-->
-    <!--</div>-->
-
     <ion-list dir="rtl">
       <div ng-repeat="group in userInfo">
         <ion-item class="item-stable"
@@ -37,7 +25,7 @@
         <ion-item class="item-accordion"
                   ng-repeat="item in group.items"
                   ng-show="isGroupShown(group)">
-          <i class="icon" ng-class="iconHobby(group) ? '' : 'ion-edit'"></i>
+          <!--<i class="icon" ng-class="iconHobby(group) ? '':'' "></i>-->
           {{item}}
         </ion-item>
       </div>

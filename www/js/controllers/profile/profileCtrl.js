@@ -1,32 +1,40 @@
 'use strict';
 /**
  * controller  - profile
- */
-app.controller('ProfileCtrl', function($scope, $rootScope, $http, userFactory,apiCallService, APP_REGEX, $localstorage, $state,$ionicPopup){
+*/
+
+/////need to be in directive
+//app.directive('clicker', function(){
+//  var link = function(scope){
+//    scope.showMessage = function(){
+//      alert('you clicked the directive!');
+//    };
+//  };
+//  return{
+//    link: link,
+//    template: "<ion-item ng-click='showMessage()'>Click me!</ion-item>"
+//  }
+//  });
+
+
+app.controller('ProfileCtrl', function($scope, $rootScope, $http, userFactory, APP_REGEX, $localstorage, $state,$ionicPopup){
 
   console.log('I am a profileCtrl');
   var lsValue =  $localstorage.get($localstorage.localSTypes.BNSToken);
   $http.defaults.headers.post['x-access-token'] = lsValue;
-  //START-getAllcategory
-  $scope.category = null;
-  function getAllCategory() {
-    var promise = apiCallService.getAllCategory();
-    promise.then(function (result) {
-      if (result.err) {
-        // error validation
-        $scope.category = [];
-        return;
-      }
-      // validation on result.data
-      if (result.result.length == 0) {
-        $scope.category = [];
-        return;
-      }
-      $scope.category = result.result;
-    }, function (reason) {
-    });
-  }
 
+  //START-getAllcategory
+  var getAllCategory = function (options) {
+    $http.post(SERVER_ROOT_PATH+"/client/category/getAll", options)
+      .then(function(result){
+        if (result.data.error) {
+          // handle error.
+          console.log('Receiving activities error:', userMissions.data.error.message);
+          return;
+        }
+      console.log("category:",result.data.result);
+    });
+  };
   //END-getAllcategory
 
   //background photo need to be in user obj.
@@ -40,18 +48,21 @@ app.controller('ProfileCtrl', function($scope, $rootScope, $http, userFactory,ap
   //Static data user-info (hobby,favorit- articles && missions ),API-CAll
   $scope.userInfo=[
     {
+      "id":"hooby",
       "name":"תחביבים",
-      "items":["כדורגל","מסעדות","ציור"],
+      "items":["תירס","אוכל","ספורט"],
       "show":false,
       "addHobby":"ion-edit",
       "removeHobby":"ion-close"
     },
     {
+      "id":"favoritArticles",
       "name":"כתבות",
       "items":["הכנסת בושי"],
       "show":false
     },
     {
+      "id":"favoritMissions",
       "name":"פעילויות",
       "items":["האכלת גמלים"],
       "show":false
@@ -66,34 +77,41 @@ app.controller('ProfileCtrl', function($scope, $rootScope, $http, userFactory,ap
     group.show = !group.show;
   };
   $scope.isGroupShown = function(group) {
+    //if(group.id=="hooby" && group.items.length==0){
+    //}
     return group.show;
   }
-  $scope.iconHobby=function(group){
+  //$scope.iconHobby=function(group){
+  //    if(group.id=="hooby" && group.items.length>0){
+  //      return 'ion-close';
+  //    }
+  //  if(group.id=="hooby" && group.items.length==0){
+  //    return 'ion-edit';
+  //  }
+  //}
 
-  }
-
-  ///poopup
-  var myPopup = $ionicPopup.show({
-    template: '<input type="password" ng-model="data.wifi">',
-    title: 'Enter Wi-Fi Password',
-    subTitle: 'Please use normal things',
-    scope: $scope,
-    buttons: [
-      { text: 'Cancel' },
-      {
-        text: '<b>Save</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.data.wifi) {
-            //don't allow the user to close unless he enters wifi password
-            e.preventDefault();
-          } else {
-            return $scope.data.wifi;
-          }
-        }
-      }
-    ]
-  });
+  ///////poopup
+  //var myPopup = $ionicPopup.show({
+  //  template: '<input type="password" ng-model="data.wifi">',
+  //  title: 'Enter Wi-Fi Password',
+  //  subTitle: 'Please use normal things',
+  //  scope: $scope,
+  //  buttons: [
+  //    { text: 'Cancel' },
+  //    {
+  //      text: '<b>Save</b>',
+  //      type: 'button-positive',
+  //      onTap: function(e) {
+  //        if (!$scope.data.wifi) {
+  //          //don't allow the user to close unless he enters wifi password
+  //          e.preventDefault();
+  //        } else {
+  //          return $scope.data.wifi;
+  //        }
+  //      }
+  //    }
+  //  ]
+  //});
 
   function init(){
     getAllCategory();

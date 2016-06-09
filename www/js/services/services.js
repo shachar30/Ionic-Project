@@ -22,14 +22,7 @@ angular.module('BNSApp.service', [])
             return promise;
         }
     }
-})
-  .service('apiCallService',function ($http, $q,userFactory) {
-    //getAllCategory
-    this.getAllCategory = function (options) {
-      $http.post(SERVER_ROOT_PATH+"/" + "client" + "/category/getAll", options);
-    };
-
-  });
+});
 
 
 
