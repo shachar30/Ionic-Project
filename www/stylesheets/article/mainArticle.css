@@ -19,8 +19,8 @@
   width: 70px;
   background-color: transparent;
   border-color: transparent;
-  position: relative;
-  right: 180px;
+  /*position: relative;*/
+  /*right: 260px;*/
 }
 .favorit-article label{
   float: right;

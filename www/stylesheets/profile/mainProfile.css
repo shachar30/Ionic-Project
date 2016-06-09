@@ -3,10 +3,36 @@
 }
 .backgroundImg{
   position: relative;
+  width: 100%;
+}
+.backgroundImg > img{
+  width: 100%;
 }
 .profileImg{
-  position: relative;
-  right: 140px;
-  top:-16px;
+  margin-right: 42%;
+  z-index: 99;
+  margin-top: -6%;
 }
+/*.toggles{*/
 
+/*}*/
+/*.toggles > button {*/
+  /*width: 100%;*/
+  /*direction: rtl;*/
+  /*background-color: blue;*/
+  /*color: white;*/
+  /*text-align: right;*/
+/*}*/
+
+
+/*.toggles > button:hover{*/
+  /*color: white;*/
+/*}*/
+.iconCustom{
+  font-size: 170%;
+  background-color: #F9966B;
+}
+.iconName{
+  font-size: 170%;
+  margin-right: 5%;
+}

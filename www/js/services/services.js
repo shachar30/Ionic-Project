@@ -5,7 +5,7 @@ angular.module('BNSApp.service', [])
         loginUser: function(name, pw) {
             var deferred = $q.defer();
             var promise = deferred.promise;
- 
+
             if (name == 'user' && pw == 'secret') {
                 deferred.resolve('Welcome ' + name + '!');
             } else {
@@ -22,4 +22,15 @@ angular.module('BNSApp.service', [])
             return promise;
         }
     }
-});
+})
+  .service('apiCallService',function ($http, $q,userFactory) {
+    //getAllCategory
+    this.getAllCategory = function (options) {
+      $http.post(SERVER_ROOT_PATH+"/" + "client" + "/category/getAll", options);
+    };
+
+  });
+
+
+
+

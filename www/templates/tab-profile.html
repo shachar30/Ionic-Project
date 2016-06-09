@@ -1,11 +1,11 @@
 <ion-view view-title="Profile">
   <link rel="stylesheet" type="text/css" href="../stylesheets/profile/mainProfile.css">
-<!--  www/template/tab-profile  -->
+  <!--  www/template/tab-profile  -->
   <ion-content class="bnsprofilepage">
 
     <div class="row" style="padding: 0px;">
       <div class="backgroundImg">
-        <img style="width:369px;" src="{{backgroundImg}}">
+        <img src="{{backgroundImg}}">
       </div>
     </div>
     <div class="row">
@@ -13,17 +13,35 @@
         <img src="{{profileImg}}" style="border-radius: 35px;">
       </div>
     </div>
-    <div class="row">
-      <div class="tabs">
-        <button ng-click="testJqu()" class="button">Test</button>
-        <p id="e">
-          This is the paragraph to end all paragraphs.  You
-          should feel <em>lucky</em> to have seen such a paragraph in
-          your life.  Congratulations!
-        </p>
+
+    <!--<div class="row">-->
+      <!--<div class="toggles">-->
+        <!--<button ng-click="testJqu()" class="button">Test</button>-->
+        <!--<p id="testToggle">-->
+          <!--This is the paragraph to end all paragraphs.  You-->
+          <!--should feel <em>lucky</em> to have seen such a paragraph in-->
+          <!--your life.  Congratulations!-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <ion-list dir="rtl">
+      <div ng-repeat="group in userInfo">
+        <ion-item class="item-stable"
+                  ng-click="toggleGroup(group)"
+                  ng-class="{active: isGroupShown(group)}">
+          <i class="icon iconCustom" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+          &nbsp;
+         <span class="iconName"><b>{{group.name}}</b></span>
+        </ion-item>
+        <ion-item class="item-accordion"
+                  ng-repeat="item in group.items"
+                  ng-show="isGroupShown(group)">
+          <i class="icon" ng-class="iconHobby(group) ? '' : 'ion-edit'"></i>
+          {{item}}
+        </ion-item>
       </div>
-    </div>
+    </ion-list>
   </ion-content>
 
 </ion-view>
-
